@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Data;
 using System.Dynamic;
 using System.Runtime.CompilerServices;
@@ -15,6 +16,7 @@ namespace NoteApp
     public class Note : ICloneable
 
     {
+        [JsonProperty("TimeCreated")]
         public readonly DateTime TimeCreated;
         private DateTime _lastChangeTime;
         private string _name = "Без названия";
@@ -137,5 +139,6 @@ namespace NoteApp
             newNote.Category = _noteCategory;
             return newNote;
         }
+
     }
 }
