@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditNoteForm));
             this.titleLabel = new System.Windows.Forms.Label();
             this.categoryLabel = new System.Windows.Forms.Label();
             this.createdLabel = new System.Windows.Forms.Label();
@@ -62,7 +63,7 @@
             // createdLabel
             // 
             this.createdLabel.AutoSize = true;
-            this.createdLabel.Location = new System.Drawing.Point(12, 74);
+            this.createdLabel.Location = new System.Drawing.Point(18, 80);
             this.createdLabel.Name = "createdLabel";
             this.createdLabel.Size = new System.Drawing.Size(47, 13);
             this.createdLabel.TabIndex = 2;
@@ -71,7 +72,7 @@
             // CreatedDateTimePicker
             // 
             this.CreatedDateTimePicker.Enabled = false;
-            this.CreatedDateTimePicker.Location = new System.Drawing.Point(69, 74);
+            this.CreatedDateTimePicker.Location = new System.Drawing.Point(71, 80);
             this.CreatedDateTimePicker.Name = "CreatedDateTimePicker";
             this.CreatedDateTimePicker.Size = new System.Drawing.Size(116, 20);
             this.CreatedDateTimePicker.TabIndex = 3;
@@ -79,7 +80,7 @@
             // UpdatedDateTimePicker
             // 
             this.UpdatedDateTimePicker.Enabled = false;
-            this.UpdatedDateTimePicker.Location = new System.Drawing.Point(269, 74);
+            this.UpdatedDateTimePicker.Location = new System.Drawing.Point(269, 80);
             this.UpdatedDateTimePicker.Name = "UpdatedDateTimePicker";
             this.UpdatedDateTimePicker.Size = new System.Drawing.Size(112, 20);
             this.UpdatedDateTimePicker.TabIndex = 14;
@@ -87,7 +88,7 @@
             // updatedLabel
             // 
             this.updatedLabel.AutoSize = true;
-            this.updatedLabel.Location = new System.Drawing.Point(212, 74);
+            this.updatedLabel.Location = new System.Drawing.Point(212, 80);
             this.updatedLabel.Name = "updatedLabel";
             this.updatedLabel.Size = new System.Drawing.Size(51, 13);
             this.updatedLabel.TabIndex = 13;
@@ -97,8 +98,9 @@
             // 
             this.titleTextBox.Location = new System.Drawing.Point(69, 10);
             this.titleTextBox.Name = "titleTextBox";
-            this.titleTextBox.Size = new System.Drawing.Size(719, 20);
+            this.titleTextBox.Size = new System.Drawing.Size(312, 20);
             this.titleTextBox.TabIndex = 15;
+            this.titleTextBox.TextChanged += new System.EventHandler(this.titleTextBox_TextChanged);
             // 
             // noteTextBox
             // 
@@ -107,10 +109,11 @@
             this.noteTextBox.Name = "noteTextBox";
             this.noteTextBox.Size = new System.Drawing.Size(776, 291);
             this.noteTextBox.TabIndex = 17;
+            this.noteTextBox.TextChanged += new System.EventHandler(this.noteTextBox_TextChanged);
             // 
             // okButton
             // 
-            this.okButton.Location = new System.Drawing.Point(557, 418);
+            this.okButton.Location = new System.Drawing.Point(620, 417);
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(75, 23);
             this.okButton.TabIndex = 18;
@@ -120,7 +123,7 @@
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(662, 418);
+            this.cancelButton.Location = new System.Drawing.Point(713, 417);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
             this.cancelButton.TabIndex = 19;
@@ -139,9 +142,9 @@
             "Documents",
             "Finance",
             "Other"});
-            this.CategoryComboBox.Location = new System.Drawing.Point(71, 40);
+            this.CategoryComboBox.Location = new System.Drawing.Point(69, 40);
             this.CategoryComboBox.Name = "CategoryComboBox";
-            this.CategoryComboBox.Size = new System.Drawing.Size(717, 21);
+            this.CategoryComboBox.Size = new System.Drawing.Size(312, 21);
             this.CategoryComboBox.TabIndex = 20;
             // 
             // EditNoteForm
@@ -160,6 +163,7 @@
             this.Controls.Add(this.createdLabel);
             this.Controls.Add(this.categoryLabel);
             this.Controls.Add(this.titleLabel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EditNoteForm";
             this.Text = "Add/Edit Note";
             this.Load += new System.EventHandler(this.EditNoteForm_Load);

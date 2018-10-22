@@ -52,7 +52,7 @@ namespace NoteApp
             }
             set
             {
-                if (value.Length >= 0)
+                if (value.Length > 0)
                 {
                     _name = value;
                 }
@@ -74,7 +74,7 @@ namespace NoteApp
             }
             set
             {
-                if (value.Length > 0)
+                if (value != null)
                 {
                     _text = value;
                 }

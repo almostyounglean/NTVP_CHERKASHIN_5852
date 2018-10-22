@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using NoteApp;
 using System.Windows.Forms;
 
@@ -48,6 +49,23 @@ namespace NoteAppUI
             DialogResult = DialogResult.No;
             Close();
         }
+
+        private void titleTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (Note.Name.Length > 50)
+            {
+                titleTextBox.BackColor = Color.LightSalmon;
+            }
+            else
+            {
+                titleTextBox.BackColor = Color.White;
+            }
+        }
+
+        private void noteTextBox_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+    }
     }
 
-}

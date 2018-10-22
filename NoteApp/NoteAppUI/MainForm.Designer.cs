@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -155,7 +156,7 @@
             this.noteTextBox.Location = new System.Drawing.Point(224, 55);
             this.noteTextBox.Multiline = true;
             this.noteTextBox.Name = "noteTextBox";
-            this.noteTextBox.Size = new System.Drawing.Size(564, 333);
+            this.noteTextBox.Size = new System.Drawing.Size(564, 353);
             this.noteTextBox.TabIndex = 7;
             // 
             // headderLabel
@@ -189,7 +190,7 @@
             // createdLabel
             // 
             this.createdLabel.AutoSize = true;
-            this.createdLabel.Location = new System.Drawing.Point(354, 39);
+            this.createdLabel.Location = new System.Drawing.Point(355, 36);
             this.createdLabel.Name = "createdLabel";
             this.createdLabel.Size = new System.Drawing.Size(47, 13);
             this.createdLabel.TabIndex = 11;
@@ -202,7 +203,7 @@
             this.createdDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.createdDateTimePicker.Location = new System.Drawing.Point(407, 32);
             this.createdDateTimePicker.Name = "createdDateTimePicker";
-            this.createdDateTimePicker.Size = new System.Drawing.Size(157, 20);
+            this.createdDateTimePicker.Size = new System.Drawing.Size(75, 20);
             this.createdDateTimePicker.TabIndex = 12;
             // 
             // updatedDateTimePicker
@@ -210,47 +211,48 @@
             this.updatedDateTimePicker.CustomFormat = "dd.MM.yyyy HH:mm:ss";
             this.updatedDateTimePicker.Enabled = false;
             this.updatedDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.updatedDateTimePicker.Location = new System.Drawing.Point(642, 33);
+            this.updatedDateTimePicker.Location = new System.Drawing.Point(576, 32);
             this.updatedDateTimePicker.Name = "updatedDateTimePicker";
-            this.updatedDateTimePicker.Size = new System.Drawing.Size(146, 20);
+            this.updatedDateTimePicker.Size = new System.Drawing.Size(76, 20);
             this.updatedDateTimePicker.TabIndex = 14;
             // 
             // updatedLabel
             // 
             this.updatedLabel.AutoSize = true;
-            this.updatedLabel.Location = new System.Drawing.Point(585, 39);
+            this.updatedLabel.Location = new System.Drawing.Point(519, 36);
             this.updatedLabel.Name = "updatedLabel";
             this.updatedLabel.Size = new System.Drawing.Size(51, 13);
             this.updatedLabel.TabIndex = 13;
             this.updatedLabel.Text = "Updated:";
+            this.updatedLabel.Click += new System.EventHandler(this.updatedLabel_Click);
             // 
             // deleteNoteButton
             // 
-            this.deleteNoteButton.Image = global::NoteAppUI.Properties.Resources.icons8_minus_32;
-            this.deleteNoteButton.Location = new System.Drawing.Point(158, 394);
+            this.deleteNoteButton.Location = new System.Drawing.Point(146, 414);
             this.deleteNoteButton.Name = "deleteNoteButton";
-            this.deleteNoteButton.Size = new System.Drawing.Size(44, 42);
+            this.deleteNoteButton.Size = new System.Drawing.Size(72, 22);
             this.deleteNoteButton.TabIndex = 6;
+            this.deleteNoteButton.Text = "Delete Note";
             this.deleteNoteButton.UseVisualStyleBackColor = true;
             this.deleteNoteButton.Click += new System.EventHandler(this.deleteNoteButton_Click);
             // 
             // editeNoteButton
             // 
-            this.editeNoteButton.Image = global::NoteAppUI.Properties.Resources.icons8_edit_32;
-            this.editeNoteButton.Location = new System.Drawing.Point(85, 394);
+            this.editeNoteButton.Location = new System.Drawing.Point(75, 414);
             this.editeNoteButton.Name = "editeNoteButton";
-            this.editeNoteButton.Size = new System.Drawing.Size(44, 42);
+            this.editeNoteButton.Size = new System.Drawing.Size(74, 22);
             this.editeNoteButton.TabIndex = 5;
+            this.editeNoteButton.Text = "Edit Note";
             this.editeNoteButton.UseVisualStyleBackColor = true;
             this.editeNoteButton.Click += new System.EventHandler(this.editeNoteButton_Click);
             // 
             // addNoteButton
             // 
-            this.addNoteButton.Image = global::NoteAppUI.Properties.Resources.icons8_plus_501;
-            this.addNoteButton.Location = new System.Drawing.Point(16, 394);
+            this.addNoteButton.Location = new System.Drawing.Point(12, 414);
             this.addNoteButton.Name = "addNoteButton";
-            this.addNoteButton.Size = new System.Drawing.Size(44, 42);
+            this.addNoteButton.Size = new System.Drawing.Size(64, 22);
             this.addNoteButton.TabIndex = 4;
+            this.addNoteButton.Text = "Add Note";
             this.addNoteButton.UseVisualStyleBackColor = true;
             this.addNoteButton.Click += new System.EventHandler(this.addNoteButton_Click);
             // 
@@ -274,7 +276,7 @@
             this.ListNotes.Name = "ListNotes";
             this.ListNotes.ReadOnly = true;
             this.ListNotes.RowHeadersVisible = false;
-            this.ListNotes.Size = new System.Drawing.Size(206, 333);
+            this.ListNotes.Size = new System.Drawing.Size(206, 353);
             this.ListNotes.TabIndex = 15;
             this.ListNotes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ListNotes_CellClick);
             this.ListNotes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ListNotes_CellContentClick);
@@ -334,6 +336,7 @@
             this.Controls.Add(this.categoryComboBox);
             this.Controls.Add(this.showCategorylabel);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.Text = "MainForm";

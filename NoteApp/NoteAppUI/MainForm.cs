@@ -117,5 +117,10 @@ namespace NoteAppUI
                 noteTextBox.Text = note.Text;
             }
         }
+
+        private void updatedLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
