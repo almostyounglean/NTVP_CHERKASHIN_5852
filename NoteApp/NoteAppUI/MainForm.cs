@@ -122,5 +122,55 @@ namespace NoteAppUI
         {
 
         }
+
+        private void createdDateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void createdLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void headderCategoryLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void categoryHeadderLabelText_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void headderLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void noteTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void categoryComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void showCategorylabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

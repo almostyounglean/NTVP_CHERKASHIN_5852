@@ -104,16 +104,20 @@
             // 
             // noteTextBox
             // 
-            this.noteTextBox.Location = new System.Drawing.Point(12, 120);
+            this.noteTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.noteTextBox.Location = new System.Drawing.Point(16, 106);
             this.noteTextBox.Multiline = true;
             this.noteTextBox.Name = "noteTextBox";
-            this.noteTextBox.Size = new System.Drawing.Size(776, 291);
+            this.noteTextBox.Size = new System.Drawing.Size(776, 316);
             this.noteTextBox.TabIndex = 17;
             this.noteTextBox.TextChanged += new System.EventHandler(this.noteTextBox_TextChanged);
             // 
             // okButton
             // 
-            this.okButton.Location = new System.Drawing.Point(620, 417);
+            this.okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.okButton.Location = new System.Drawing.Point(620, 428);
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(75, 23);
             this.okButton.TabIndex = 18;
@@ -123,7 +127,8 @@
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(713, 417);
+            this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.cancelButton.Location = new System.Drawing.Point(713, 428);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
             this.cancelButton.TabIndex = 19;
@@ -151,11 +156,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 461);
             this.Controls.Add(this.CategoryComboBox);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.okButton);
-            this.Controls.Add(this.noteTextBox);
             this.Controls.Add(this.titleTextBox);
             this.Controls.Add(this.UpdatedDateTimePicker);
             this.Controls.Add(this.updatedLabel);
@@ -163,7 +167,9 @@
             this.Controls.Add(this.createdLabel);
             this.Controls.Add(this.categoryLabel);
             this.Controls.Add(this.titleLabel);
+            this.Controls.Add(this.noteTextBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(500, 500);
             this.Name = "EditNoteForm";
             this.Text = "Add/Edit Note";
             this.Load += new System.EventHandler(this.EditNoteForm_Load);
