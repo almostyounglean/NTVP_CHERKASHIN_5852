@@ -21,7 +21,7 @@ namespace NoteAppUI
         {
             InitializeComponent();
         }
-       
+
         private void addNoteButton_Click(object sender, EventArgs e)
         {
             EditNoteForm form = new EditNoteForm();
@@ -33,8 +33,8 @@ namespace NoteAppUI
         }
 
         /// <summary>
-       /// Реализация метода обновления листа с заметками
-       /// </summary>
+        /// Реализация метода обновления листа с заметками
+        /// </summary>
 
         private void RefreshList()
         {
@@ -59,31 +59,33 @@ namespace NoteAppUI
             if (!File.Exists("notes.notes"))
             {
                 list = new Project();
-                ProjectManager.Save(list,"notes.notes");
+                ProjectManager.Save(list, "notes.notes");
             }
             else
             {
                 list = ProjectManager.Load("notes.notes");
             }
+
             RefreshList();
         }
 
         private void editeNoteButton_Click(object sender, EventArgs e)
         {
-            if (ListNotes.CurrentRow!=null)
+            if (ListNotes.CurrentRow != null)
             {
                 EditNoteForm form = new EditNoteForm();
                 form.Note = (Note) ListNotes.CurrentRow.DataBoundItem;
-                Note temp = (Note)form.Note.Clone();
+                Note temp = (Note) form.Note.Clone();
                 if (form.ShowDialog() == DialogResult.OK)
                 {
-                    for(var i=0;i<list.NotesList.Count;i++)
+                    for (var i = 0; i < list.NotesList.Count; i++)
                     {
                         if (list.NotesList[i] == temp)
                         {
                             list.NotesList[i] = form.Note;
                         }
                     }
+
                     RefreshList();
                 }
             }
@@ -92,7 +94,7 @@ namespace NoteAppUI
 
         private void ListNotes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
         private void deleteNoteButton_Click(object sender, EventArgs e)
@@ -100,7 +102,7 @@ namespace NoteAppUI
             if (ListNotes.CurrentRow != null)
             {
                 list.NotesList.Remove((Note) ListNotes.CurrentRow.DataBoundItem);
-                
+
                 RefreshList();
             }
         }
@@ -109,7 +111,7 @@ namespace NoteAppUI
         {
             if (ListNotes.CurrentRow != null)
             {
-                var note = (Note)ListNotes.CurrentRow.DataBoundItem;
+                var note = (Note) ListNotes.CurrentRow.DataBoundItem;
                 headderLabel.Text = note.Name;
                 headderCategoryLabel.Text = note.Category.ToString();
                 createdDateTimePicker.Value = note.TimeCreated;
@@ -172,5 +174,48 @@ namespace NoteAppUI
         {
 
         }
+
+        private void addNoteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EditNoteForm form = new EditNoteForm();
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                list.NotesList.Add(form.Note);
+                RefreshList();
+            }
+        }
+
+        private void editNoteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (ListNotes.CurrentRow != null)
+            {
+                EditNoteForm form = new EditNoteForm();
+                form.Note = (Note) ListNotes.CurrentRow.DataBoundItem;
+                Note temp = (Note) form.Note.Clone();
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    for (var i = 0; i < list.NotesList.Count; i++)
+                    {
+                        if (list.NotesList[i] == temp)
+                        {
+                            list.NotesList[i] = form.Note;
+                        }
+                    }
+
+                    RefreshList();
+                }
+            }
+        }
+
+        private void deleteNoteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (ListNotes.CurrentRow != null)
+            {
+                list.NotesList.Remove((Note) ListNotes.CurrentRow.DataBoundItem);
+
+                RefreshList();
+            }
+        }
     }
 }
+    

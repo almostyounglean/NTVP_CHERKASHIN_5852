@@ -52,7 +52,7 @@ namespace NoteAppUI
 
         private void titleTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (Note.Name.Length > 50) 
+            if (titleTextBox.Text.Length > 50) 
             {
                 titleTextBox.BackColor = Color.LightSalmon;
             }
@@ -64,8 +64,16 @@ namespace NoteAppUI
 
         private void noteTextBox_TextChanged(object sender, EventArgs e)
         {
-            
+            if (noteTextBox.Text.Length > 200)
+            {
+                titleTextBox.BackColor = Color.LightSalmon;
+            }
+            else
+            {
+                titleTextBox.BackColor = Color.White;
+            }
         }
     }
     }
+    
 
