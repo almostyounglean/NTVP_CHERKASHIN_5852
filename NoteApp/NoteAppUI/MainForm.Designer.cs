@@ -51,13 +51,13 @@
             this.editeNoteButton = new System.Windows.Forms.Button();
             this.addNoteButton = new System.Windows.Forms.Button();
             this.ListNotes = new System.Windows.Forms.DataGridView();
-            this.deleteNoteButton = new System.Windows.Forms.Button();
-            this.noteTextBox = new System.Windows.Forms.TextBox();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastChangeTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.noteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.deleteNoteButton = new System.Windows.Forms.Button();
+            this.noteTextBox = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ListNotes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.noteBindingSource)).BeginInit();
@@ -247,7 +247,7 @@
             // 
             this.editeNoteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.editeNoteButton.Image = ((System.Drawing.Image)(resources.GetObject("editeNoteButton.Image")));
-            this.editeNoteButton.Location = new System.Drawing.Point(47, 414);
+            this.editeNoteButton.Location = new System.Drawing.Point(43, 414);
             this.editeNoteButton.Name = "editeNoteButton";
             this.editeNoteButton.Size = new System.Drawing.Size(22, 22);
             this.editeNoteButton.TabIndex = 5;
@@ -258,7 +258,7 @@
             // 
             this.addNoteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.addNoteButton.Image = ((System.Drawing.Image)(resources.GetObject("addNoteButton.Image")));
-            this.addNoteButton.Location = new System.Drawing.Point(16, 414);
+            this.addNoteButton.Location = new System.Drawing.Point(12, 414);
             this.addNoteButton.Name = "addNoteButton";
             this.addNoteButton.Size = new System.Drawing.Size(25, 22);
             this.addNoteButton.TabIndex = 4;
@@ -282,39 +282,15 @@
             this.lastChangeTimeDataGridViewTextBoxColumn});
             this.ListNotes.DataSource = this.noteBindingSource;
             this.ListNotes.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.ListNotes.Location = new System.Drawing.Point(16, 66);
+            this.ListNotes.Location = new System.Drawing.Point(12, 66);
             this.ListNotes.MultiSelect = false;
             this.ListNotes.Name = "ListNotes";
             this.ListNotes.ReadOnly = true;
             this.ListNotes.RowHeadersVisible = false;
-            this.ListNotes.Size = new System.Drawing.Size(219, 342);
+            this.ListNotes.Size = new System.Drawing.Size(223, 342);
             this.ListNotes.TabIndex = 15;
             this.ListNotes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ListNotes_CellClick);
             this.ListNotes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ListNotes_CellContentClick);
-            // 
-            // deleteNoteButton
-            // 
-            this.deleteNoteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.deleteNoteButton.Image = ((System.Drawing.Image)(resources.GetObject("deleteNoteButton.Image")));
-            this.deleteNoteButton.Location = new System.Drawing.Point(75, 414);
-            this.deleteNoteButton.Name = "deleteNoteButton";
-            this.deleteNoteButton.Size = new System.Drawing.Size(24, 22);
-            this.deleteNoteButton.TabIndex = 6;
-            this.deleteNoteButton.UseVisualStyleBackColor = true;
-            this.deleteNoteButton.Click += new System.EventHandler(this.deleteNoteButton_Click);
-            // 
-            // noteTextBox
-            // 
-            this.noteTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.noteTextBox.Enabled = false;
-            this.noteTextBox.Location = new System.Drawing.Point(252, 66);
-            this.noteTextBox.Multiline = true;
-            this.noteTextBox.Name = "noteTextBox";
-            this.noteTextBox.Size = new System.Drawing.Size(556, 342);
-            this.noteTextBox.TabIndex = 7;
-            this.noteTextBox.TextChanged += new System.EventHandler(this.noteTextBox_TextChanged);
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -350,6 +326,30 @@
             // noteBindingSource
             // 
             this.noteBindingSource.DataSource = typeof(NoteApp.Note);
+            // 
+            // deleteNoteButton
+            // 
+            this.deleteNoteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.deleteNoteButton.Image = ((System.Drawing.Image)(resources.GetObject("deleteNoteButton.Image")));
+            this.deleteNoteButton.Location = new System.Drawing.Point(70, 414);
+            this.deleteNoteButton.Name = "deleteNoteButton";
+            this.deleteNoteButton.Size = new System.Drawing.Size(24, 22);
+            this.deleteNoteButton.TabIndex = 6;
+            this.deleteNoteButton.UseVisualStyleBackColor = true;
+            this.deleteNoteButton.Click += new System.EventHandler(this.deleteNoteButton_Click);
+            // 
+            // noteTextBox
+            // 
+            this.noteTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.noteTextBox.Enabled = false;
+            this.noteTextBox.Location = new System.Drawing.Point(241, 66);
+            this.noteTextBox.Multiline = true;
+            this.noteTextBox.Name = "noteTextBox";
+            this.noteTextBox.Size = new System.Drawing.Size(583, 342);
+            this.noteTextBox.TabIndex = 7;
+            this.noteTextBox.TextChanged += new System.EventHandler(this.noteTextBox_TextChanged);
             // 
             // MainForm
             // 

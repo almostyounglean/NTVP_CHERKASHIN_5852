@@ -52,13 +52,22 @@ namespace NoteApp
             }
             set
             {
-                if ((value.Length > 0) || (value.Length < 50))
+                if (value.Length > 0) 
                 {
                     _name = value;
                 }
                 else
                 {
-                    throw new ArgumentException("Имя заметки должна быть больше 0 и меньше 50");
+                    throw new ArgumentException("Имя заметки должно содержать хотябы один символ");
+                }
+
+                if (value.Length < 50)
+                {
+                    _name = value;
+                }
+                else
+                {
+                    throw new ArgumentException("Имя заметки должно быть не больше 50 символов");
                 }
             }
 

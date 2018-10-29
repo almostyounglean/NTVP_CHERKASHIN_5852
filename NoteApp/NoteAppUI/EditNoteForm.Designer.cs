@@ -63,7 +63,7 @@
             // createdLabel
             // 
             this.createdLabel.AutoSize = true;
-            this.createdLabel.Location = new System.Drawing.Point(27, 80);
+            this.createdLabel.Location = new System.Drawing.Point(18, 86);
             this.createdLabel.Name = "createdLabel";
             this.createdLabel.Size = new System.Drawing.Size(47, 13);
             this.createdLabel.TabIndex = 2;
@@ -72,7 +72,7 @@
             // CreatedDateTimePicker
             // 
             this.CreatedDateTimePicker.Enabled = false;
-            this.CreatedDateTimePicker.Location = new System.Drawing.Point(71, 80);
+            this.CreatedDateTimePicker.Location = new System.Drawing.Point(69, 80);
             this.CreatedDateTimePicker.Name = "CreatedDateTimePicker";
             this.CreatedDateTimePicker.Size = new System.Drawing.Size(116, 20);
             this.CreatedDateTimePicker.TabIndex = 3;
@@ -88,7 +88,7 @@
             // updatedLabel
             // 
             this.updatedLabel.AutoSize = true;
-            this.updatedLabel.Location = new System.Drawing.Point(212, 80);
+            this.updatedLabel.Location = new System.Drawing.Point(203, 86);
             this.updatedLabel.Name = "updatedLabel";
             this.updatedLabel.Size = new System.Drawing.Size(51, 13);
             this.updatedLabel.TabIndex = 13;
@@ -108,10 +108,10 @@
             this.noteTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.noteTextBox.Location = new System.Drawing.Point(16, 106);
+            this.noteTextBox.Location = new System.Drawing.Point(8, 106);
             this.noteTextBox.Multiline = true;
             this.noteTextBox.Name = "noteTextBox";
-            this.noteTextBox.Size = new System.Drawing.Size(776, 316);
+            this.noteTextBox.Size = new System.Drawing.Size(784, 316);
             this.noteTextBox.TabIndex = 17;
             this.noteTextBox.TextChanged += new System.EventHandler(this.noteTextBox_TextChanged);
             // 
