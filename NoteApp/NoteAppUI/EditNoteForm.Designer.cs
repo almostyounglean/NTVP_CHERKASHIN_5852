@@ -63,7 +63,7 @@
             // createdLabel
             // 
             this.createdLabel.AutoSize = true;
-            this.createdLabel.Location = new System.Drawing.Point(18, 80);
+            this.createdLabel.Location = new System.Drawing.Point(27, 80);
             this.createdLabel.Name = "createdLabel";
             this.createdLabel.Size = new System.Drawing.Size(47, 13);
             this.createdLabel.TabIndex = 2;
@@ -80,7 +80,7 @@
             // UpdatedDateTimePicker
             // 
             this.UpdatedDateTimePicker.Enabled = false;
-            this.UpdatedDateTimePicker.Location = new System.Drawing.Point(269, 80);
+            this.UpdatedDateTimePicker.Location = new System.Drawing.Point(260, 80);
             this.UpdatedDateTimePicker.Name = "UpdatedDateTimePicker";
             this.UpdatedDateTimePicker.Size = new System.Drawing.Size(112, 20);
             this.UpdatedDateTimePicker.TabIndex = 14;
@@ -93,6 +93,7 @@
             this.updatedLabel.Size = new System.Drawing.Size(51, 13);
             this.updatedLabel.TabIndex = 13;
             this.updatedLabel.Text = "Updated:";
+            this.updatedLabel.Click += new System.EventHandler(this.updatedLabel_Click);
             // 
             // titleTextBox
             // 
@@ -117,7 +118,7 @@
             // okButton
             // 
             this.okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.okButton.Location = new System.Drawing.Point(620, 428);
+            this.okButton.Location = new System.Drawing.Point(636, 428);
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(75, 23);
             this.okButton.TabIndex = 18;
@@ -128,7 +129,7 @@
             // cancelButton
             // 
             this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.cancelButton.Location = new System.Drawing.Point(713, 428);
+            this.cancelButton.Location = new System.Drawing.Point(717, 428);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
             this.cancelButton.TabIndex = 19;

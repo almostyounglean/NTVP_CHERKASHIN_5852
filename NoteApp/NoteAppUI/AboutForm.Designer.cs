@@ -110,8 +110,9 @@
             this.labelCopyright.Name = "labelCopyright";
             this.labelCopyright.Size = new System.Drawing.Size(271, 17);
             this.labelCopyright.TabIndex = 21;
-            this.labelCopyright.Text = "No Rules";
+            this.labelCopyright.Text = "MIT License";
             this.labelCopyright.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelCopyright.Click += new System.EventHandler(this.labelCopyright_Click);
             // 
             // labelCompanyName
             // 

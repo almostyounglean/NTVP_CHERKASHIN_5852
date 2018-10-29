@@ -120,13 +120,44 @@
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="editeNoteButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJ
+        TUUH4godCB4183otjgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAACqSURBVDhP
+        ndGxCQJBFIThVVE0Ua8XWzC7wFpsQrABGxBMNRRNBT01sgOrMNN/wAfHwunbHfiShZld2JCYETZ4YKqD
+        lPRxxvvrhRKujKGBBWxAnvibAnfsEY+s8DNWtsIBA2hkjQ4ao2ffYGVzhEbaaIzKV8Rlcd2cXdY/V8gu
+        X5BVHiK73EUPOySXlRn0r/GIq6wsoUJ9xF1WTrBbbcRdVjSwxRwTtOBMCB9sGExefl/6kwAAAABJRU5E
+        rkJggg==
+</value>
+  </data>
+  <data name="addNoteButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJ
+        TUUH4godCBszZ258/gAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAACqSURBVDhP
+        1dGxCcJAGMXxW8PaJugIktI1Ughi4QRuIXELs0BGcAHFwsJKC60FK/1/eCdB7t2hnQ9+JFxyL0c+J9Lg
+        EbFEiWxaqII9RkgmVXDEBX3IqIIzZphiDBlV0GXvyPx5QYUJNohtDGSBjclmbSOLbQyyBQt/PSFbYHO1
+        L65wxw21X5tjh8+CNd5J/TR51G56KDDEFXbsgV+zZ18l/IOfc8D2dZuLc09bmHgWiMOyVgAAAABJRU5E
+        rkJggg==
+</value>
+  </data>
   <metadata name="noteBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>132, 17</value>
   </metadata>
+  <data name="deleteNoteButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJ
+        TUUH4godCCECExmivQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAABqSURBVDhP
+        Y4ACdiBWgGJFIN4CxP/RMEgMJAdTB9IDBxZAjK6BEAbpgQMVIF5BIgbpQQFqQFxAJAapxQARQIzNqdgw
+        SC0GGDVg1AAQoNgAMyDGphgbBqnFCiYC8VcgxqYJhEFyIDVQwMAAAFbSnVE9vdmMAAAAAElFTkSuQmCC
+</value>
+  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>25</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAkAAAAAAAEAIACkcgAAlgAAAICAAAABACAAKAgBADpzAABgYAAAAQAgAKiUAABiewEASEgAAAEA

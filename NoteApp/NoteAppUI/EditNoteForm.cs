@@ -29,19 +29,20 @@ namespace NoteAppUI
 
         private void okButton_Click(object sender, System.EventArgs e)
         {
-            DialogResult = DialogResult.OK;
             try
             {
                 Note.Name = titleTextBox.Text;
                 Note.LastChangeTime = DateTime.Now;
                 Note.Text = noteTextBox.Text;
                 Note.Category = (NoteCategory) CategoryComboBox.SelectedIndex;
-                Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                return;
             }
+            DialogResult = DialogResult.OK;
+            Close();
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
@@ -72,6 +73,11 @@ namespace NoteAppUI
             {
                 titleTextBox.BackColor = Color.White;
             }
+        }
+
+        private void updatedLabel_Click(object sender, EventArgs e)
+        {
+
         }
     }
     }

@@ -101,5 +101,10 @@ namespace NoteAppUI
             }
         }
         #endregion
+
+        private void labelCopyright_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

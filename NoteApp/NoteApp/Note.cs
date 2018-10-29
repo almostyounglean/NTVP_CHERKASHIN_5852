@@ -52,15 +52,16 @@ namespace NoteApp
             }
             set
             {
-                if (value.Length > 0)
+                if ((value.Length > 0) || (value.Length < 50))
                 {
                     _name = value;
                 }
                 else
                 {
-                    throw new ArgumentException("Имя заметки должна быть больше 0");
+                    throw new ArgumentException("Имя заметки должна быть больше 0 и меньше 50");
                 }
             }
+
         }
 
         /// <summary>
@@ -74,7 +75,7 @@ namespace NoteApp
             }
             set
             {
-                if (value != null)
+                if (value.Length > 0)
                 {
                     _text = value;
                 }
