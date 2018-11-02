@@ -6,11 +6,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{345A3B19-93BE-478C-8195-170B0A06594A}</ProjectGuid>
+    <ProjectGuid>{F0D8EF84-5C7D-423D-BE79-F7E9B32239FE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NoteApp</RootNamespace>
-    <AssemblyName>NoteApp</AssemblyName>
+    <RootNamespace>NoteApp.UnitTests</RootNamespace>
+    <AssemblyName>NoteApp.UnitTests</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -51,14 +51,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Note.cs" />
-    <Compile Include="NoteCategory.cs" />
-    <Compile Include="Project.cs" />
-    <Compile Include="ProjectManager.cs" />
+    <Compile Include="NoteTest.cs" />
+    <Compile Include="ProjectManagerTests.cs" />
+    <Compile Include="ProjectTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NoteApp\NoteApp.csproj">
+      <Project>{345a3b19-93be-478c-8195-170b0a06594a}</Project>
+      <Name>NoteApp</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

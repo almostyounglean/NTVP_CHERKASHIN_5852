@@ -1,8 +1,5 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Data;
-using System.Dynamic;
-using System.Runtime.CompilerServices;
 
 
 namespace NoteApp
