@@ -15,115 +15,127 @@ namespace NoteApp.UnitTests
             _note = new Note(DateTime.Now);
         }
 
-        [Test(Description = "Позитивный тест Name")]
-        public void TestNameGet_CorrectValue()
+        [Test(Description = "Позитивный тест геттера Name")]
+        public void TestTitleGet_CorrectValue()
         {
-            var expected = "Валидное имя";
-            _note.Name = expected;
+            var Title = "Заметка";
+            _note.Name = Title;
             var actual = _note.Name;
-            Assert.AreEqual(expected, actual, "Геттер Name возвращает неправильное имя");
+            Assert.AreEqual(Title, actual, "Геттер Name возвращает неправильное значение");
+        }
+        [Test(Description = "Позитивный тест cеттера Name")]
+        public void TestTitleSet_CorrectValue()
+        {
+            var Title = "Заметка";
+            _note.Name = Title;
+
+            var NewTitle = "Заметка";
+            var actual = _note.Name;
+            Assert.AreEqual(NewTitle, actual, "Сеттер Name задает неверное значение");
+        }
+        [Test(Description = "Проверка на заголовок, длиной больше 50.")]
+        public void TestTitleSet_Longer50()
+        {
+            var wrongTitle = "ЗаметкаЗаметкаЗаметкаЗаметкаЗаметкаЗаметкаЗаметкаЗаметкаЗаметкаЗаметка";
+            Assert.Throws<ArgumentException>(() => { _note.Name = wrongTitle; }, "Должно возникать исключение, если длина заголовка длиннее 50 символов");
         }
         
-        [Test(Description = "Негативный тест Name")]
-        public void TestNameGet_IncorrectValueLongerThan50Symbols()
+        [Test(Description = "Позитивный тест геттера Text")]
+        public void TestTextGet_CorrectValue()
         {
-            var wrongName = "Ровно 51 символ ааааааааааааааааааааааааааааааааааа";
-            Assert.Throws<ArgumentException>(() => { _note.Name = wrongName; },
-                "Имя длиннее 50 символов");
-
+            var Text = "Заметка";
+            _note.Text = Text;
+            var actual = _note.Text;
+            Assert.AreEqual(Text, actual, "Геттер Text возвращает неправильное значение");
         }
 
-        [Test(Description = "Тест с нулевым значением в поле Name")]
-        public void TestNameGet_IncorrectValue0Symbols()
-        {
-            var nullName = "";
-            Assert.Throws<ArgumentException>(() => { _note.Name = nullName; },
-                "Имя не может быть из нуля символов");
-        }
-
-
-        [Test(Description = "Позитивный тест сеттера Categoty")]
-        public void TestCategotyGet_CorrectValue()
-        {
-            var expected = NoteCategory.Work;
-            _note.Category = expected;
-            var actual = _note.Category;
-            Assert.AreEqual(expected, actual, "Сеттер Category возвращает неправильную категорию");
-
-        }
-
-        [Test(Description = "Позитивный тест Геттера Categoty")]
-        public void TestCategotyGet_NullValue()
-        {
-            var expected = NoteCategory.Work;
-            _note.Category = expected;
-            var actual = _note.Category;
-            Assert.AreEqual(expected, actual, "Сеттер Category возвращает неправильную категорию");
-        }
-
-
-        [Test(Description = "Негативный тест Text")]
-        public void TestTextGet_IncorrectValue()
-        {
-            var NullText = "";
-            Assert.Throws<ArgumentException>(() => { _note.Text = NullText; },
-                "Текст не может быть из нуля символов");
-        }
-
-        [Test(Description = "Позитивный тест Text")]
+        [Test(Description = "Позитивный тест cеттера Text")]
         public void TestTextSet_CorrectValue()
         {
-            var expected = "Текст";
-            _note.Text = expected;
+            var text = "Заметка";
+            _note.Text = text;
+
+            var NewText = "Заметка";
             var actual = _note.Text;
-            Assert.AreEqual(expected, actual, "Сеттер Text возвращает неправильную категорию");
+            Assert.AreEqual(NewText, actual, "Сеттер Text задает неверное значение");
+        }
+        [Test(Description = "Проверка текста, длиной равной 0.")]
+        public void TestTextSet_Equal0()
+        {
+            var wrongText = "";
+            Assert.Throws<ArgumentException>(() => { _note.Text = wrongText; }, "Должно возникать исключение, если длина текста равно 0");
+        }
+        [Test(Description = "Позитивный тест геттера Category")]
+        public void TestCategoryGet_CorrectValue()
+        {
+            var Text = NoteCategory.Home;
+            _note.Category = Text;
+            var actual = _note.Category;
+            Assert.AreEqual(Text, actual, "Геттер Category возвращает неправильное значение");
         }
 
-        [TestCase("Геттер LastChangeTime возвращает неправильную дату",
-            TestName = "Позитивный тест геттера DateChange")]
-        [TestCase("Сеттер lastChangeTime записывает неправильную дату",
-            TestName = "Позитивный тест сеттера DateChange")]
-        public void TestDateChangeGetSet_CorrectValue(string message)
+        [Test(Description = "Позитивный тест cеттера Category")]
+        public void TestCategorySet_CorrectValue()
         {
-            var expected = DateTime.Now;
-            _note.LastChangeTime = expected;
+            var category = NoteCategory.Home;
+            _note.Category = category;
+
+            var newCategory = NoteCategory.Home;
+            var actual = _note.Category;
+            Assert.AreEqual(newCategory, actual, "Сеттер Category задает неверное значение");
+        }
+     
+        [Test(Description = "Позитивный тест геттера NoteCreated")]
+        public void TestNoteCreatedGet_CorrectValue()
+        {
+            var time = DateTime.Now;
+            var actual = _note.TimeCreated;
+            Assert.AreEqual(time, actual, "Геттер TimeCreated возвращает неправильное значение");
+        }
+
+        [Test(Description = "Позитивный тест геттера LastChangeTime")]
+        public void TestNoteChangedGet_CorrectValue()
+        {
+            var time = DateTime.Now;
             var actual = _note.LastChangeTime;
-            Assert.AreEqual(expected, actual, message);
+            Assert.AreEqual(time, actual, "Геттер LastChangeTime возвращает неправильное значение");
         }
 
-        [Test(Description = "Негативный тест если LastChangeTime больше текущей даты")]
-        public void TestDateChangeSet_LongerDateTimeNow()
+        [Test(Description = "Позитивный тест сеттера LastChangeTime")]
+        public void TestNoteChangedSet_CorrectValue()
         {
-            var date = DateTime.Now;
-            var wrongTitle = date.AddSeconds(1);
-            Assert.Throws<ArgumentException>(
-                () => { _note.LastChangeTime = wrongTitle; },
-                "Должно возникнуть исключение, если длина LastChangeTime больше текущей даты");
+            var time = DateTime.Now;
+            _note.LastChangeTime = time;
+            var current = _note.LastChangeTime;
+            Assert.AreEqual(time, current, "Сеттер LastChangeTime возвращает неправильное значение");
         }
 
-        [Test(Description = "Тест коструктора класса Note")]
-        public void TestNoteConstructor_CorrectValue()
+        [Test(Description = "Дата изменения больше, чем текущая дата")]
+        public void TestNoteChangedSet_LongerCurrentDate()
         {
-            var actual = _note;
-            Assert.AreEqual(_note.Name, actual.Name, "Неправильное значение в поле Name");
-            Assert.AreEqual(_note.Category, actual.Category, "Неправильное значение в поле Category");
-            Assert.AreEqual(_note.Text, actual.Text, "Неправильное значение в поле Text");
-            Assert.AreEqual(_note.TimeCreated, actual.TimeCreated, "Неправильное значение в поле TimeCreated");
-            Assert.AreEqual(_note.LastChangeTime, actual.LastChangeTime, "Неправильное значение в поле LastChangeTime");
+            var time = DateTime.Now;
+            time = time.AddDays(100);
+            Assert.Throws<ArgumentException>(() => { _note.LastChangeTime = time; }, "Должно возникать исключение, если дата изменения больше, чем текущая.");
         }
 
-        [Test(Description = "Тест Clone в классе Note")]
+        [Test(Description = "Дата создания больше, чем текущая дата")]
+        public void TestNoteCreatedSet_LongerCurrentDate()
+        {
+            var time = DateTime.Now;
+            time = time.AddDays(100);
+            Assert.Throws<ArgumentException>(() => { var note = new Note(time); }, "Должно возникать исключение, если дата создания больше, чем текущая.");
+        }
+
+        [Test(Description = "Позитивный тест Clone()")]
         public void TestClone_CorrectValue()
         {
-            _note.Text = "Заметка";
-            var actual = (Note) _note.Clone();
-
-            Assert.AreEqual(_note.Name, actual.Name, "Неправильное значение в поле Name");
-            Assert.AreEqual(_note.Category, actual.Category, "Неправильное значение в поле Category");
-            Assert.AreEqual(_note.Text, actual.Text, "Неправильное значение в поле Text");
-            Assert.AreEqual(_note.TimeCreated, actual.TimeCreated, "Неправильное значение в поле TimeCreated");
-            Assert.AreEqual(_note.LastChangeTime, actual.LastChangeTime, "Неправильное значение в поле LastChangeTime");
+            var note = new Note(DateTime.Now);
+            note.Text = "Заметка";
+            Note clone = (Note)note.Clone();
+            Assert.AreEqual(note.ToString(), clone.ToString(), "Метод Clone возвращает неверное значение.");
         }
+
+    
 
     }
 }

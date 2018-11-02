@@ -52,3 +52,39 @@
 [02.11.2018 21:58:10 Informational]    NUnit3TestExecutor converted 17 of 17 NUnit test cases
 [02.11.2018 21:58:11 Informational] NUnit Adapter 3.11.0.0: Test execution complete
 [02.11.2018 21:58:11 Informational] ========== Выполнение тестов завершено: 17 выполнено (0:00:03,6623886) ==========
+[02.11.2018 23:11:23 Informational] ------ Выполнение тестов запущено ------
+[02.11.2018 23:11:31 Informational] NUnit Adapter 3.11.0.0: Test execution started
+[02.11.2018 23:11:32 Informational] Running all tests in C:\Users\nikit\source\repos\NTVP_CHERKASHIN_5852\NoteApp\NoteApp.UnitTests\bin\Debug\NoteApp.UnitTests.dll
+[02.11.2018 23:11:33 Informational]    NUnit3TestExecutor converted 22 of 22 NUnit test cases
+[02.11.2018 23:11:36 Informational] NUnit Adapter 3.11.0.0: Test execution complete
+[02.11.2018 23:11:37 Informational] ========== Выполнение тестов завершено: 22 выполнено (0:00:13,8331022) ==========
+[02.11.2018 23:15:03 Informational] ------ Выполнение тестов запущено ------
+[02.11.2018 23:15:05 Informational] NUnit Adapter 3.11.0.0: Test execution started
+[02.11.2018 23:15:05 Informational] Running all tests in C:\Users\nikit\source\repos\NTVP_CHERKASHIN_5852\NoteApp\NoteApp.UnitTests\bin\Debug\NoteApp.UnitTests.dll
+[02.11.2018 23:15:06 Informational]    NUnit3TestExecutor converted 19 of 19 NUnit test cases
+[02.11.2018 23:15:08 Informational] NUnit Adapter 3.11.0.0: Test execution complete
+[02.11.2018 23:15:08 Informational] ========== Выполнение тестов завершено: 19 выполнено (0:00:04,8286697) ==========
+[02.11.2018 23:26:04 Informational] ------ Выполнение тестов запущено ------
+[02.11.2018 23:26:13 Informational] NUnit Adapter 3.11.0.0: Test execution started
+[02.11.2018 23:26:13 Informational] Running all tests in C:\Users\nikit\source\repos\NTVP_CHERKASHIN_5852\NoteApp\NoteApp.UnitTests\bin\Debug\NoteApp.UnitTests.dll
+[02.11.2018 23:26:15 Informational]    NUnit3TestExecutor converted 19 of 19 NUnit test cases
+[02.11.2018 23:26:16 Informational] NUnit Adapter 3.11.0.0: Test execution complete
+[02.11.2018 23:26:16 Informational] ========== Выполнение тестов завершено: 19 выполнено (0:00:12,073111) ==========
+[02.11.2018 23:36:09 Informational] ------ Выполнение тестов запущено ------
+[02.11.2018 23:36:11 Informational] NUnit Adapter 3.11.0.0: Test execution started
+[02.11.2018 23:36:11 Informational] Running all tests in C:\Users\nikit\source\repos\NTVP_CHERKASHIN_5852\NoteApp\NoteApp.UnitTests\bin\Debug\NoteApp.UnitTests.dll
+[02.11.2018 23:36:12 Informational]    NUnit3TestExecutor converted 19 of 19 NUnit test cases
+[02.11.2018 23:36:13 Informational] NUnit Adapter 3.11.0.0: Test execution complete
+[02.11.2018 23:36:13 Informational] ========== Выполнение тестов завершено: 19 выполнено (0:00:04,4772465) ==========
+[02.11.2018 23:39:30 Informational] ------ Выполнение тестов запущено ------
+[02.11.2018 23:39:32 Informational] NUnit Adapter 3.11.0.0: Test execution started
+[02.11.2018 23:39:32 Informational] Running all tests in C:\Users\nikit\source\repos\NTVP_CHERKASHIN_5852\NoteApp\NoteApp.UnitTests\bin\Debug\NoteApp.UnitTests.dll
+[02.11.2018 23:39:33 Informational]    NUnit3TestExecutor converted 19 of 19 NUnit test cases
+[02.11.2018 23:39:34 Informational] NUnit Adapter 3.11.0.0: Test execution complete
+[02.11.2018 23:39:34 Informational] ========== Выполнение тестов завершено: 19 выполнено (0:00:03,9815004) ==========
+[02.11.2018 23:41:09 Informational] ------ Выполнение тестов запущено ------
+[02.11.2018 23:41:10 Informational] NUnit Adapter 3.11.0.0: Test execution started
+[02.11.2018 23:41:10 Informational] Running all tests in C:\Users\nikit\source\repos\NTVP_CHERKASHIN_5852\NoteApp\NoteApp.UnitTests\bin\Debug\NoteApp.UnitTests.dll
+[02.11.2018 23:41:11 Informational]    NUnit3TestExecutor converted 19 of 19 NUnit test cases
+[02.11.2018 23:41:12 Informational] NUnit Adapter 3.11.0.0: Test execution complete
+[02.11.2018 23:41:12 Informational] ========== Выполнение тестов завершено: 19 выполнено (0:00:03,6052215) ==========
