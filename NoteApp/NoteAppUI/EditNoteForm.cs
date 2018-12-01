@@ -24,7 +24,7 @@ namespace NoteAppUI
             CreatedDateTimePicker.Value = Note.TimeCreated;
             UpdatedDateTimePicker.Value = Note.LastChangeTime;
             noteTextBox.Text = Note.Text;
-            CategoryComboBox.SelectedIndex = (int)Note.Category;
+            CategoryComboBox.SelectedIndex = (int)(Note.Category - 1);
         }
 
         private void okButton_Click(object sender, System.EventArgs e)
@@ -34,7 +34,7 @@ namespace NoteAppUI
                 Note.Name = titleTextBox.Text;
                 Note.LastChangeTime = DateTime.Now;
                 Note.Text = noteTextBox.Text;
-                Note.Category = (NoteCategory) CategoryComboBox.SelectedIndex;
+                Note.Category = (NoteCategory)(CategoryComboBox.SelectedIndex + 1);
             }
             catch (Exception ex)
             {
@@ -53,7 +53,7 @@ namespace NoteAppUI
 
         private void titleTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (titleTextBox.Text.Length > 50) 
+            if (titleTextBox.Text.Length > 50)
             {
                 titleTextBox.BackColor = Color.LightSalmon;
             }
@@ -79,7 +79,12 @@ namespace NoteAppUI
         {
 
         }
+
+        private void CategoryComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
-    }
-    
+}
+
 

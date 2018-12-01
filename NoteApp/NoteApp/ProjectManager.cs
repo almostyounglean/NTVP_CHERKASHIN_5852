@@ -21,7 +21,7 @@ namespace NoteApp
             using (StreamWriter sw = new StreamWriter(fileName))
             using (JsonWriter writer = new JsonTextWriter(sw))
             {
-                //Вызываем сериализацию и передаём объек для сериализации
+                //Вызываем сериализацию и передаём объект для сериализации
                 serializer.Serialize(writer, (Project) listNotes);
             }
         }

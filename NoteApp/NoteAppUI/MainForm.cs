@@ -22,7 +22,10 @@ namespace NoteAppUI
             InitializeComponent();
         }
 
-        private void addNoteButton_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Метод добавления заметки
+        /// </summary>
+        private void AddNote()
         {
             EditNoteForm form = new EditNoteForm();
             if (form.ShowDialog() == DialogResult.OK)
@@ -33,13 +36,54 @@ namespace NoteAppUI
         }
 
         /// <summary>
+        /// Метод редактирования заметки
+        /// </summary>
+        private void EditNote()
+        {
+            if (ListNotes.CurrentRow != null)
+            {
+                EditNoteForm form = new EditNoteForm();
+                var temp = (Note)ListNotes.CurrentRow.DataBoundItem;
+                form.Note = (Note)temp.Clone();
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    temp = form.Note;
+
+                    RefreshList();
+                }
+            }
+
+        }
+
+        /// <summary>
+        /// Метод удаления заметки
+        /// </summary>
+        private void RemoveNote()
+        {
+            if (ListNotes.CurrentRow != null)
+            {
+                if (MessageBox.Show("Вы действительно хотите удалить заметку?", "Удаление", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    list.NotesList.Remove((Note)ListNotes.CurrentRow.DataBoundItem);
+                    RefreshList();
+                }
+              
+            }
+
+        }
+
+        private void addNoteButton_Click(object sender, EventArgs e)
+        {
+            AddNote();
+        }
+
+        /// <summary>
         /// Реализация метода обновления листа с заметками
         /// </summary>
-
         private void RefreshList()
         {
             ListNotes.DataSource = null;
-            ListNotes.DataSource = list.NotesList;
+            ListNotes.DataSource = list.Sort(categoryComboBox.SelectedIndex);
             ProjectManager.Save(list, "notes.notes");
         }
 
@@ -66,30 +110,13 @@ namespace NoteAppUI
                 list = ProjectManager.Load("notes.notes");
             }
 
+            categoryComboBox.SelectedIndex = 0;
             RefreshList();
         }
 
         private void editeNoteButton_Click(object sender, EventArgs e)
         {
-            if (ListNotes.CurrentRow != null)
-            {
-                EditNoteForm form = new EditNoteForm();
-                form.Note = (Note) ListNotes.CurrentRow.DataBoundItem;
-                Note temp = (Note) form.Note.Clone();
-                if (form.ShowDialog() == DialogResult.OK)
-                {
-                    for (var i = 0; i < list.NotesList.Count; i++)
-                    {
-                        if (list.NotesList[i] == temp)
-                        {
-                            list.NotesList[i] = form.Note;
-                        }
-                    }
-
-                    RefreshList();
-                }
-            }
-
+            EditNote();
         }
 
         private void ListNotes_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -99,12 +126,7 @@ namespace NoteAppUI
 
         private void deleteNoteButton_Click(object sender, EventArgs e)
         {
-            if (ListNotes.CurrentRow != null)
-            {
-                list.NotesList.Remove((Note) ListNotes.CurrentRow.DataBoundItem);
-
-                RefreshList();
-            }
+            RemoveNote();
         }
 
         private void ListNotes_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -157,7 +179,7 @@ namespace NoteAppUI
 
         private void categoryComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            RefreshList();
         }
 
         private void showCategorylabel_Click(object sender, EventArgs e)
@@ -177,44 +199,17 @@ namespace NoteAppUI
 
         private void addNoteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            EditNoteForm form = new EditNoteForm();
-            if (form.ShowDialog() == DialogResult.OK)
-            {
-                list.NotesList.Add(form.Note);
-                RefreshList();
-            }
+            AddNote();
         }
 
         private void editNoteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (ListNotes.CurrentRow != null)
-            {
-                EditNoteForm form = new EditNoteForm();
-                form.Note = (Note) ListNotes.CurrentRow.DataBoundItem;
-                Note temp = (Note) form.Note.Clone();
-                if (form.ShowDialog() == DialogResult.OK)
-                {
-                    for (var i = 0; i < list.NotesList.Count; i++)
-                    {
-                        if (list.NotesList[i] == temp)
-                        {
-                            list.NotesList[i] = form.Note;
-                        }
-                    }
-
-                    RefreshList();
-                }
-            }
+            EditNote();
         }
 
         private void deleteNoteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (ListNotes.CurrentRow != null)
-            {
-                list.NotesList.Remove((Note) ListNotes.CurrentRow.DataBoundItem);
-
-                RefreshList();
-            }
+            RemoveNote();
         }
     }
 }
