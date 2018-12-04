@@ -9,6 +9,10 @@ namespace NoteApp
     /// </summary>
     public class ProjectManager
     {
+
+        // Путь в папку "Документы".
+       public readonly static string _defaultPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal) + @"\NoteApp.notes";
+
         /// <summary>
         /// Запись в файл
         /// </summary>

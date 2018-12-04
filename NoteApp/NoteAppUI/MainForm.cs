@@ -84,7 +84,7 @@ namespace NoteAppUI
         {
             ListNotes.DataSource = null;
             ListNotes.DataSource = list.Sort(categoryComboBox.SelectedIndex);
-            ProjectManager.Save(list, "notes.notes");
+            ProjectManager.Save(list, ProjectManager._defaultPath);
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -100,14 +100,14 @@ namespace NoteAppUI
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            if (!File.Exists("notes.notes"))
+            if (!File.Exists(ProjectManager._defaultPath))
             {
                 list = new Project();
-                ProjectManager.Save(list, "notes.notes");
+                ProjectManager.Save(list, ProjectManager._defaultPath);
             }
             else
             {
-                list = ProjectManager.Load("notes.notes");
+                list = ProjectManager.Load(ProjectManager._defaultPath);
             }
 
             categoryComboBox.SelectedIndex = 0;

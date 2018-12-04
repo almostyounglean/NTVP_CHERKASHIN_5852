@@ -19,12 +19,17 @@ namespace NoteAppUI
             if (Note == null)
             {
                 Note = new Note(DateTime.Now);
+                CategoryComboBox.SelectedIndex = 0;
+            }
+            else
+            {
+                CategoryComboBox.SelectedIndex = (int)(Note.Category - 1);
             }
             titleTextBox.Text = Note.Name;
             CreatedDateTimePicker.Value = Note.TimeCreated;
             UpdatedDateTimePicker.Value = Note.LastChangeTime;
             noteTextBox.Text = Note.Text;
-            CategoryComboBox.SelectedIndex = (int)(Note.Category - 1);
+            
         }
 
         private void okButton_Click(object sender, System.EventArgs e)

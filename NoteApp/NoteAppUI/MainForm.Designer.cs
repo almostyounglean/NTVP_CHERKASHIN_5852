@@ -384,7 +384,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.MinimumSize = new System.Drawing.Size(736, 300);
             this.Name = "MainForm";
-            this.Text = "MainForm";
+            this.Text = "NoteApp";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
