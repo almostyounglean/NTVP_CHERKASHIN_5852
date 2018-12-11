@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using NoteApp;
 
@@ -40,10 +33,10 @@ namespace NoteAppUI
         /// </summary>
         private void EditNote()
         {
-            if (ListNotes.CurrentRow != null)
+            if (ListNotes.SelectedItem != null)
             {
                 EditNoteForm form = new EditNoteForm();
-                var temp = (Note)ListNotes.CurrentRow.DataBoundItem;
+                var temp = (Note)ListNotes.SelectedItem;
                 form.Note = (Note)temp.Clone();
                 if (form.ShowDialog() == DialogResult.OK)
                 {
@@ -60,11 +53,11 @@ namespace NoteAppUI
         /// </summary>
         private void RemoveNote()
         {
-            if (ListNotes.CurrentRow != null)
+            if (ListNotes.SelectedItem != null)
             {
                 if (MessageBox.Show("Вы действительно хотите удалить заметку?", "Удаление", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    list.NotesList.Remove((Note)ListNotes.CurrentRow.DataBoundItem);
+                    list.NotesList.Remove((Note)ListNotes.SelectedItem);
                     RefreshList();
                 }
               
@@ -84,6 +77,7 @@ namespace NoteAppUI
         {
             ListNotes.DataSource = null;
             ListNotes.DataSource = list.Sort(categoryComboBox.SelectedIndex);
+            ListNotes.DisplayMember = "Name";
             ProjectManager.Save(list, ProjectManager._defaultPath);
         }
 
@@ -110,8 +104,8 @@ namespace NoteAppUI
                 list = ProjectManager.Load(ProjectManager._defaultPath);
             }
 
-            categoryComboBox.SelectedIndex = 0;
             RefreshList();
+            categoryComboBox.SelectedIndex = 0;
         }
 
         private void editeNoteButton_Click(object sender, EventArgs e)
@@ -119,82 +113,14 @@ namespace NoteAppUI
             EditNote();
         }
 
-        private void ListNotes_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void deleteNoteButton_Click(object sender, EventArgs e)
         {
             RemoveNote();
         }
 
-        private void ListNotes_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (ListNotes.CurrentRow != null)
-            {
-                var note = (Note) ListNotes.CurrentRow.DataBoundItem;
-                headderLabel.Text = note.Name;
-                headderCategoryLabel.Text = note.Category.ToString();
-                createdDateTimePicker.Value = note.TimeCreated;
-                updatedDateTimePicker.Value = note.LastChangeTime;
-                noteTextBox.Text = note.Text;
-            }
-        }
-
-        private void updatedLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void createdDateTimePicker_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void createdLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void headderCategoryLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void categoryHeadderLabelText_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void headderLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void noteTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void categoryComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             RefreshList();
-        }
-
-        private void showCategorylabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void addNoteToolStripMenuItem_Click(object sender, EventArgs e)
@@ -210,6 +136,27 @@ namespace NoteAppUI
         private void deleteNoteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RemoveNote();
+        }
+
+        private void ListNotes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ListNotes.SelectedItem != null)
+            {
+                var note = (Note)ListNotes.SelectedItem;
+                headderLabel.Text = note.Name;
+                headderCategoryLabel.Text = note.Category.ToString();
+                createdDateTimePicker.Value = note.TimeCreated;
+                updatedDateTimePicker.Value = note.LastChangeTime;
+                noteTextBox.Text = note.Text;
+            }
+        }
+
+        private void ListNotes_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete)
+            {
+                RemoveNote();
+            }   
         }
     }
 }
